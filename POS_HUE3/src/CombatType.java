@@ -1,3 +1,3 @@
-public enum WeaponType {
+public enum CombatType {
     NONE, MELEE, RANGED
 }

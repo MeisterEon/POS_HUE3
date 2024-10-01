@@ -5,10 +5,10 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class FileReader {
+public class WeaponManager {
     private final String FILE_NAME;
 
-    public FileReader(String FILE_NAME) {
+    public WeaponManager(String FILE_NAME) {
         this.FILE_NAME = FILE_NAME;
     }
 
@@ -21,7 +21,7 @@ public class FileReader {
                     .map(s -> s.split(";"))
                     .map(s -> new Weapon(
                             s[0],
-                            WeaponType.valueOf(s[1]),
+                            CombatType.valueOf(s[1]),
                             DamageType.valueOf(s[2]),
                             Integer.parseInt(s[3]),
                             Integer.parseInt(s[4]),
@@ -34,7 +34,17 @@ public class FileReader {
             throw new RuntimeException(e);
         }
 
-        list.sort(((o1, o2) -> o2.getDamage() - o1.getDamage()));
+
         return list;
+    }
+
+    public List<Weapon> sortWeaponListByDamage(List<Weapon> weaponList) {
+        weaponList.sort(((o1, o2) -> o2.getDamage() - o1.getDamage()));
+        return weaponList;
+    }
+
+    public List<Weapon> sortWeaponListByAlphabet(List<Weapon> weaponList) {
+        weaponList.sort((Comparator.comparing((Weapon o) -> o.getCombatType().toString()).thenComparing(o -> o.getDamageType().toString()).thenComparing(Weapon::getName)));
+        return weaponList;
     }
 }

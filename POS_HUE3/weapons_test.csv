@@ -1,3 +1,5 @@
 name;combatType;damageType;damage;speed;strength;value
 Tuigan Bow;RANGED;MISSILE;1;5;6;3500
 Varscona;MELEE;SLASHING;11;3;5;4250
+Crom Faeyr;MELEE;BLUNT;16;1;25;15500
+Carsomyr;MELEE;SLASHING;17;5;14;20000

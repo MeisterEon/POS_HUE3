@@ -2,16 +2,16 @@ import java.util.Objects;
 
 public class Weapon {
     private String name;
-    private WeaponType weaponType;
+    private CombatType combatType;
     private DamageType damageType;
     private int damage;
     private int speed;
     private int strength;
     private int value;
 
-    public Weapon(String name, WeaponType weaponType, DamageType damageType, int damage, int speed, int strength, int value) {
+    public Weapon(String name, CombatType combatType, DamageType damageType, int damage, int speed, int strength, int value) {
         this.name = name;
-        this.weaponType = weaponType;
+        this.combatType = combatType;
         this.damageType = damageType;
         this.damage = damage;
         this.speed = speed;
@@ -28,24 +28,24 @@ public class Weapon {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Weapon weapon = (Weapon) o;
-        return damage == weapon.damage && speed == weapon.speed && strength == weapon.strength && value == weapon.value && Objects.equals(name, weapon.name) && weaponType == weapon.weaponType && damageType == weapon.damageType;
+        return damage == weapon.damage && speed == weapon.speed && strength == weapon.strength && value == weapon.value && Objects.equals(name, weapon.name) && combatType == weapon.combatType && damageType == weapon.damageType;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, weaponType, damageType, damage, speed, strength, value);
+        return Objects.hash(name, combatType, damageType, damage, speed, strength, value);
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public WeaponType getWeaponType() {
-        return weaponType;
+    public CombatType getCombatType() {
+        return combatType;
     }
 
-    public void setWeaponType(WeaponType weaponType) {
-        this.weaponType = weaponType;
+    public void setCombatType(CombatType combatType) {
+        this.combatType = combatType;
     }
 
     public DamageType getDamageType() {
