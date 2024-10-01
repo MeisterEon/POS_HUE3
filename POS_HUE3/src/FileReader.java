@@ -34,7 +34,7 @@ public class FileReader {
             throw new RuntimeException(e);
         }
 
-        list.sort(Comparator.comparingInt(Weapon::getDamage));
+        list.sort(((o1, o2) -> o2.getDamage() - o1.getDamage()));
         return list;
     }
 }
