@@ -1,11 +1,11 @@
 public class Weapon {
-    String name;
-    WeaponType weaponType;
-    DamageType damageType;
-    int damage;
-    int speed;
-    int strength;
-    int value;
+    private String name;
+    private WeaponType weaponType;
+    private DamageType damageType;
+    private int damage;
+    private int speed;
+    private int strength;
+    private int value;
 
     public Weapon(String name, WeaponType weaponType, DamageType damageType, int damage, int speed, int strength, int value) {
         this.name = name;
