@@ -1,13 +1,13 @@
 import java.util.Objects;
 
 public class Weapon {
-    private String name;
-    private CombatType combatType;
-    private DamageType damageType;
-    private int damage;
-    private int speed;
-    private int strength;
-    private int value;
+    String name;
+    CombatType combatType;
+    DamageType damageType;
+    int damage;
+    int speed;
+    int strength;
+    int value;
 
     public Weapon(String name, CombatType combatType, DamageType damageType, int damage, int speed, int strength, int value) {
         this.name = name;
